@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Wibci.XForms.Controls/v15
+/Wibci.XForms.Controls/Wibci.XForms.Controls/obj
+/Wibci.XForms.Controls/Wibci.XForms.Controls.Android/obj
+/Wibci.XForms.Controls/Wibci.XForms.Controls.iOS/obj
+/Wibci.XForms.Controls/Wibci.XForms.Controls.UWP/obj
+/Wibci.XForms.Controls/Wibci.XForms.Controls/bin/Debug/netstandard2.0
+/Wibci.XForms.Controls/Wibci.XForms.Controls.Android/bin/Debug
+/Wibci.XForms.Controls/Wibci.XForms.Controls.Android/Wibci.XForms.Controls.Android.csproj.user
+/Wibci.XForms.Controls/Wibci.XForms.Controls.iOS/bin/iPhoneSimulator/Debug
+/Wibci.XForms.Controls/Wibci.XForms.Controls.UWP/bin/x86/Debug
