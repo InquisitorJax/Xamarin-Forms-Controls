@@ -15,13 +15,11 @@ namespace Wibci.XForms.Controls.iOS.WibciEntry
 		{
 			base.OnElementPropertyChanged(sender, e);
 
-			if (Control != null && e.PropertyName == nameof(EntryEx.IsValid) && Element is EntryEx entry)
+			if (Control != null && e.PropertyName == EntryEx.IsValidProperty.PropertyName && Element is EntryEx entry)
 			{
 				//TODO: ValidationColor property with default of red
 				var isValid = entry.IsValid;
-				var validationColor = Color.Red;
-				Control.Layer.BorderWidth = isValid ? 0 : 1;
-				Control.Layer.BorderColor = validationColor.ToCGColor();
+				var validationColor = Color.Red;				
 				Control.Layer.BorderColor = isValid ? UIColor.LightGray.CGColor : validationColor.ToCGColor();				
 			}
 		}
@@ -31,10 +29,8 @@ namespace Wibci.XForms.Controls.iOS.WibciEntry
 			base.OnElementChanged(e);
 
 			//TODO: TextColor property with default of black
-
 			Control.Layer.BorderWidth = new nfloat(0.8);
-			//Control.Layer.CornerRadius = 5;
-			Control.BorderStyle = UITextBorderStyle.RoundedRect;
+			Control.Layer.CornerRadius = 5;			
 			Control.BackgroundColor = UIColor.White;
 			Control.TextColor = UIColor.Black;
 		}

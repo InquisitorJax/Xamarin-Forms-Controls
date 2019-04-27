@@ -103,10 +103,6 @@ namespace Wibci.XForms.Controls
 				double yTranslate = -20;
 				if (Device.RuntimePlatform == Device.UWP)
 				{
-					yTranslate = -30;
-				}
-				else if (Device.RuntimePlatform == Device.iOS)
-				{
 					yTranslate = -25;
 				}
 				await Task.WhenAll(
