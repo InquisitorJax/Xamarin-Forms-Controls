@@ -37,6 +37,7 @@
 					Placeholder="{Binding LabelText}"
 					Text="{Binding EntryText}" />
 
+				<!--  rather use clear entry effect for android & enable in iOS in renderer  (UWP already has out the box)  -->
 				<Grid
 					Padding="5,3,5,3"
 					HorizontalOptions="End"

@@ -33,7 +33,7 @@ namespace Wibci.XForms.Controls.UWP.WibciEntry
 			Control.BorderThickness = new Windows.UI.Xaml.Thickness(1);
 			//Control.CornerRadius = 5;
 			Control.Background = new SolidColorBrush(Color.White.ToWindowsColor());
-			Control.Foreground = new SolidColorBrush(Color.Black.ToWindowsColor()); ;
+			Control.Foreground = new SolidColorBrush(Color.Black.ToWindowsColor());
 		}
 	}
 }
