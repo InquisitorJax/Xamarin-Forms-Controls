@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Wibci.XForms.Controls
 {
@@ -11,6 +6,7 @@ namespace Wibci.XForms.Controls
 	{
 		public MainPage()
 		{
+			BindingContext = new MainViewModel();
 			InitializeComponent();
 		}
 	}

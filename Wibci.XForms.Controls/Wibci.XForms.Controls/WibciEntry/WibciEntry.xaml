@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+	x:Class="Wibci.XForms.Controls.WibciEntry"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Wibci.XForms.Controls"
+	xmlns:converters="clr-namespace:Wibci.Xamarin.Forms.Converters;assembly=Wibci.Xamarin.Forms.Converters"
+	x:Name="_wibciEntry">
+	<ContentView.Margin>
+		<OnPlatform x:TypeArguments="Thickness">
+			<On Platform="iOS" Value="0,25,0,0" />
+			<On Platform="Android" Value="0,15,0,0" />
+			<On Platform="UWP" Value="0,30,0,0" />
+		</OnPlatform>
+	</ContentView.Margin>
+
+	<ContentView.Content>
+		<StackLayout BindingContext="{x:Reference _wibciEntry}">
+			<StackLayout.Resources>
+				<ResourceDictionary>
+					<converters:NullValueToBooleanConverter x:Key="nvb" />
+				</ResourceDictionary>
+			</StackLayout.Resources>
+			<Grid>
+
+				<Label
+					x:Name="_label"
+					Margin="5,5,0,0"
+					FontSize="Micro"
+					IsVisible="{Binding Text, Source={x:Reference _entry}, Converter={StaticResource nvb}, ConverterParameter=switch}"
+					Opacity="0"
+					Text="{Binding LabelText}" />
+
+				<controls:EntryEx
+					x:Name="_entry"
+					Placeholder="{Binding LabelText}"
+					Text="{Binding EntryText}" />
+			</Grid>
+
+			<Grid Padding="10,0,0,0" IsVisible="{Binding ValidationText, Converter={StaticResource nvb}, ConverterParameter=switch}">
+				<Label
+					FontSize="Small"
+					Text="{Binding ValidationText, Source={x:Reference _wibciEntry}}"
+					TextColor="Red" />
+			</Grid>
+		</StackLayout>
+	</ContentView.Content>
+</ContentView>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="Wibci.XForms.Controls.EntryPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:Wibci.XForms.Controls">
+	<ContentPage.Content>
+		<StackLayout Margin="10,20,10,0">
+			<controls:WibciEntry
+				EntryText="{Binding Text}"
+				LabelText="name"
+				ValidationText="{Binding ValidationMessage}" />
+			<Button Command="{Binding ValidateCommand}" Text="Validate" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
