@@ -37,8 +37,13 @@
 					Text="{Binding EntryText}" />
 			</Grid>
 
-			<Grid Padding="10,0,0,0" IsVisible="{Binding ValidationText, Converter={StaticResource nvb}, ConverterParameter=switch}">
+			<Grid
+				x:Name="_validationGrid"
+				Padding="10,0,0,0"
+				HeightRequest="0"
+				Opacity="0">
 				<BoxView
+					x:Name="_boxView"
 					BackgroundColor="Red"
 					CornerRadius="5"
 					HorizontalOptions="FillAndExpand"
