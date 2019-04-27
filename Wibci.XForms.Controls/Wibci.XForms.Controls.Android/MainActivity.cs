@@ -2,7 +2,6 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using FFImageLoading.Forms.Platform;
 
 namespace Wibci.XForms.Controls.Droid
 {
@@ -16,8 +15,6 @@ namespace Wibci.XForms.Controls.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
-			CachedImageRenderer.Init(true);
 
 			LoadApplication(new App());
         }

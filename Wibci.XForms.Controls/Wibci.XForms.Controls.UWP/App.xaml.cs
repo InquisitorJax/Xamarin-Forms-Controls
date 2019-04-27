@@ -1,5 +1,4 @@
-﻿using FFImageLoading.Forms.Platform;
-using System;
+﻿using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -45,8 +44,6 @@ namespace Wibci.XForms.Controls.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 Forms.Forms.Init(e);
-
-				CachedImageRenderer.Init();
 
 				if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

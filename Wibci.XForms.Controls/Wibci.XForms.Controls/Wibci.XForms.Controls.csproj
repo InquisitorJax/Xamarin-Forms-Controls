@@ -10,18 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\clear_text.svg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\clear_text.svg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Prism.Core" Version="7.1.0.431" />
     <PackageReference Include="Wibci.Xamarin.Forms.Converters" Version="2.0.0" />
-    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.5.922" />
-    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.5.922" />
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
   </ItemGroup>
 
