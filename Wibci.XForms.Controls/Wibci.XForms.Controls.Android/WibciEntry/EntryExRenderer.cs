@@ -43,6 +43,7 @@ namespace Wibci.XForms.Controls.Droid.WibciEntry
 			GradientDrawable shape = new GradientDrawable();
 			shape.SetShape(ShapeType.Rectangle);
 			shape.SetCornerRadius(10);
+			shape.SetColor(Color.White.ToAndroid());
 
 			if (!((EntryEx)Element).IsValid)
 			{

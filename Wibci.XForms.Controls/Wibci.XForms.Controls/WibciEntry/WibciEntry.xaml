@@ -38,10 +38,17 @@
 			</Grid>
 
 			<Grid Padding="10,0,0,0" IsVisible="{Binding ValidationText, Converter={StaticResource nvb}, ConverterParameter=switch}">
+				<BoxView
+					BackgroundColor="Red"
+					CornerRadius="5"
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand" />
 				<Label
+					Margin="5,0,0,0"
 					FontSize="Small"
 					Text="{Binding ValidationText, Source={x:Reference _wibciEntry}}"
-					TextColor="Red" />
+					TextColor="White"
+					VerticalTextAlignment="Center" />
 			</Grid>
 		</StackLayout>
 	</ContentView.Content>

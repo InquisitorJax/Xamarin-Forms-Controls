@@ -7,9 +7,16 @@
 	<ContentPage.Content>
 		<StackLayout Margin="10,20,10,0">
 			<controls:WibciEntry
-				EntryText="{Binding Text}"
+				EntryText="{Binding FirstName}"
 				LabelText="name"
-				ValidationText="{Binding ValidationMessage}" />
+				ValidationText="{Binding FirstNameValidationText}" />
+			<Grid Padding="15" BackgroundColor="Gray">
+				<controls:WibciEntry
+					EntryText="{Binding LastName}"
+					LabelText="name"
+					ValidationText="{Binding LastNameValidationText}" />
+			</Grid>
+
 			<Button Command="{Binding ValidateCommand}" Text="Validate" />
 		</StackLayout>
 	</ContentPage.Content>
