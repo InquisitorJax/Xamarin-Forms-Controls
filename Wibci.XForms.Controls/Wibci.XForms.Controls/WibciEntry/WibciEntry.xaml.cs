@@ -128,8 +128,9 @@ namespace Wibci.XForms.Controls
 				entry._entry.SetValue(EntryEx.IsValidProperty, isValid);
 
 				var opacity = isValid ? 0 : 1;
-				var height = isValid ? 0 : entry._boxView.Height;
-				var animate = new Animation(d => entry._validationGrid.HeightRequest = height, 0, 1, Easing.SpringIn);
+				var endHeight = isValid ? 0 : 35;
+				var startHeight = isValid ? 35 : 0;
+				var animate = new Animation(d => entry._validationGrid.HeightRequest = d, startHeight, endHeight, Easing.SpringIn);
 				animate.Commit(entry, "animate!", length: 350);
 				Task.Run(async () => await entry._validationGrid.FadeTo(opacity, 350));
 			}
