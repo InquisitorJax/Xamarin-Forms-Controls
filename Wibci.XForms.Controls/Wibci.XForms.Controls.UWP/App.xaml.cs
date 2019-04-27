@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFImageLoading.Forms.Platform;
+using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -45,7 +46,9 @@ namespace Wibci.XForms.Controls.UWP
 
                 Forms.Forms.Init(e);
 
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+				CachedImageRenderer.Init();
+
+				if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
                 }

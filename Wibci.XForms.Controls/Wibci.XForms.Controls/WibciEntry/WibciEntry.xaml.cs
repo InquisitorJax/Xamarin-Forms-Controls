@@ -146,6 +146,9 @@ namespace Wibci.XForms.Controls
 			_label.TextColor = Color.Default;
 		}
 
-
+		private void ClearText_Tapped(object sender, EventArgs e)
+		{
+			_entry.Text = null;
+		}
 	}
 }

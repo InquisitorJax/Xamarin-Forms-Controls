@@ -5,6 +5,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:controls="clr-namespace:Wibci.XForms.Controls"
 	xmlns:converters="clr-namespace:Wibci.Xamarin.Forms.Converters;assembly=Wibci.Xamarin.Forms.Converters"
+	xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
 	x:Name="_wibciEntry">
 	<ContentView.Margin>
 		<OnPlatform x:TypeArguments="Thickness">
@@ -35,6 +36,20 @@
 					x:Name="_entry"
 					Placeholder="{Binding LabelText}"
 					Text="{Binding EntryText}" />
+
+				<Grid
+					Padding="5,3,5,3"
+					HorizontalOptions="End"
+					IsVisible="{Binding Text, Source={x:Reference _entry}, Converter={StaticResource nvb}, ConverterParameter=switch}">
+					<svg:SvgCachedImage
+						Source="resource://Wibci.XForms.Controls.Resources.clear_text.svg"
+						VerticalOptions="Center"
+						WidthRequest="45" />
+					<Grid.GestureRecognizers>
+						<TapGestureRecognizer Tapped="ClearText_Tapped" />
+					</Grid.GestureRecognizers>
+				</Grid>
+
 			</Grid>
 
 			<Grid
