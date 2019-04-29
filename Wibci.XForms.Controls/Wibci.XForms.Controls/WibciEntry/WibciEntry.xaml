@@ -30,7 +30,8 @@
 					FontSize="Micro"
 					IsVisible="{Binding Text, Source={x:Reference _entry}, Converter={StaticResource nvb}, ConverterParameter=switch}"
 					Opacity="0"
-					Text="{Binding LabelText}" />
+					Text="{Binding LabelText}"
+					TextColor="{Binding LabelTextColor}" />
 
 				<controls:EntryEx
 					x:Name="_entry"

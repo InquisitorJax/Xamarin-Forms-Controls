@@ -15,6 +15,7 @@
 					<controls:WibciEntry
 						EntryText="{Binding LastName}"
 						LabelText="last name"
+						LabelTextColor="White"
 						ValidationText="{Binding LastNameValidationText}" />
 				</Grid>
 				<controls:WibciEntry

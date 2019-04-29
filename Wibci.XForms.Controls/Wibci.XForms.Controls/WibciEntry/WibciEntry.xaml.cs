@@ -28,18 +28,12 @@ namespace Wibci.XForms.Controls
 				ctrl.IsPassword = (bool)newValue;
 			});
 
-
 		public static readonly BindableProperty IsMultiLineProperty = BindableProperty.Create(nameof(IsMultiLine),
 			typeof(bool),
 			typeof(WibciEntry),
 			false,
 			BindingMode.Default,
-			null,
-			(bindable, oldValue, newValue) =>
-			{
-				var ctrl = (WibciEntry)bindable;
-				ctrl.IsPassword = (bool)newValue;
-			});
+			null);
 
 		public static readonly BindableProperty LabelTextProperty = BindableProperty.Create(nameof(LabelText), 
 			typeof(string), 
@@ -66,6 +60,18 @@ namespace Wibci.XForms.Controls
 				ctrl._editor.Keyboard = (Keyboard)newValue;
 			});
 
+		public static BindableProperty LabelTextColorProperty = BindableProperty.Create(nameof(LabelTextColor),
+			typeof(Color),
+			typeof(WibciEntry),
+			Color.Default,
+			BindingMode.Default,
+			null,
+			(bindable, oldValue, newValue) =>
+			{
+				var ctrl = (WibciEntry)bindable;
+				ctrl._label.TextColor= (Color)newValue;				
+			});
+
 
 		public WibciEntry ()
 		{
@@ -88,6 +94,16 @@ namespace Wibci.XForms.Controls
 			{
 				SetValue(Entry.IsPasswordProperty, value);
 				_entry.IsPassword = value;
+			}
+		}
+
+		public Color LabelTextColor
+		{
+			get => (Color)GetValue(LabelTextColorProperty);
+			set
+			{
+				SetValue(LabelTextColorProperty, value);
+				_label.TextColor = value;
 			}
 		}
 
@@ -146,11 +162,12 @@ namespace Wibci.XForms.Controls
 				string validationText = newValue as string;
 				bool isValid = string.IsNullOrEmpty(validationText);
 				entry._entry.SetValue(EntryEx.IsValidProperty, isValid);
+				entry._editor.SetValue(EditorEx.IsValidProperty, isValid);
 
 				var opacity = isValid ? 0 : 1;
 				var endHeight = isValid ? 0 : 35;
 				var startHeight = isValid ? 35 : 0;
-				var animate = new Animation(d => entry._validationGrid.HeightRequest = d, startHeight, endHeight, Easing.SpringIn);
+				var animate = new Animation(d => entry._validationGrid.HeightRequest = d, startHeight, endHeight, Easing.CubicOut);
 				animate.Commit(entry, "animate!", length: 350);
 				Task.Run(async () => await entry._validationGrid.FadeTo(opacity, 350));
 			}

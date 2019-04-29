@@ -93,6 +93,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="WibciEntry\ClearEntryEffect.cs" />
+    <Compile Include="WibciEntry\EditorExRenderer.cs" />
     <Compile Include="WibciEntry\EntryExRenderer.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />

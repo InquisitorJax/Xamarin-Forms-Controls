@@ -96,6 +96,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WibciEntry\EditorExRenderer.cs" />
     <Compile Include="WibciEntry\EntryExRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
