@@ -39,6 +39,26 @@ namespace Wibci.XForms.Controls
 			}
 		}
 
+		private string _email;
+
+		public string Email
+		{
+			get { return _email; }
+			set
+			{
+				SetProperty(ref _email, value);
+				EmailValidationText = null;
+			}
+		}
+
+		private string _emailValidationText;
+
+		public string EmailValidationText
+		{
+			get { return _emailValidationText; }
+			set { SetProperty(ref _emailValidationText, value); }
+		}
+
 		private string _firstNameValidationText;
 
 		public string FirstNameValidationText
@@ -55,10 +75,33 @@ namespace Wibci.XForms.Controls
 			set { SetProperty(ref _lastNameValidationText, value); }
 		}
 
+		private string _notes;
+
+		public string Notes
+		{
+			get { return _notes; }
+			set
+			{
+				SetProperty(ref _notes, value);
+				NotesValidationText = null;
+			}
+		}
+
+		private string _notesValidationText;
+
+		public string NotesValidationText
+		{
+			get { return _notesValidationText; }
+			set { SetProperty(ref _notesValidationText, value); }
+		}
+
+
 		private void Validate()
 		{
 			FirstNameValidationText = !string.IsNullOrEmpty(FirstName) ? null : "'First Name' must contain something!";
 			LastNameValidationText = !string.IsNullOrEmpty(LastName) ? null : "'Last Name' must contain something!";
+			NotesValidationText= !string.IsNullOrEmpty(Notes) ? null : "'Notes' must contain something!";
+			EmailValidationText = string.IsNullOrEmpty(Email) ? "'Email' is required" : !Email.Contains("@") ? "'Email' must be valid" : null;
 		}
 
 	}

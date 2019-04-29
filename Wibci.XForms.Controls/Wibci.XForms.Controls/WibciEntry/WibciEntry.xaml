@@ -19,6 +19,7 @@
 			<StackLayout.Resources>
 				<ResourceDictionary>
 					<converters:NullValueToBooleanConverter x:Key="nvb" />
+					<converters:BooleanToInvertedBooleanConverter x:Key="bob" />
 				</ResourceDictionary>
 			</StackLayout.Resources>
 			<Grid>
@@ -33,12 +34,20 @@
 
 				<controls:EntryEx
 					x:Name="_entry"
+					IsVisible="{Binding IsMultiLine, Converter={StaticResource bob}}"
 					Placeholder="{Binding LabelText}"
 					Text="{Binding EntryText}">
 					<Entry.Effects>
 						<controls:ClearEntryEffect />
 					</Entry.Effects>
 				</controls:EntryEx>
+
+				<controls:EditorEx
+					x:Name="_editor"
+					AutoSize="TextChanges"
+					IsVisible="{Binding IsMultiLine}"
+					Placeholder="{Binding LabelText}"
+					Text="{Binding EntryText}" />
 
 			</Grid>
 

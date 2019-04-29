@@ -5,19 +5,36 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:controls="clr-namespace:Wibci.XForms.Controls">
 	<ContentPage.Content>
-		<StackLayout Margin="10,20,10,0">
-			<controls:WibciEntry
-				EntryText="{Binding FirstName}"
-				LabelText="name"
-				ValidationText="{Binding FirstNameValidationText}" />
-			<Grid Padding="15" BackgroundColor="Gray">
+		<ScrollView>
+			<StackLayout Margin="10,20,10,0">
 				<controls:WibciEntry
-					EntryText="{Binding LastName}"
-					LabelText="name"
-					ValidationText="{Binding LastNameValidationText}" />
-			</Grid>
+					EntryText="{Binding FirstName}"
+					LabelText="first name"
+					ValidationText="{Binding FirstNameValidationText}" />
+				<Grid Padding="15" BackgroundColor="Gray">
+					<controls:WibciEntry
+						EntryText="{Binding LastName}"
+						LabelText="last name"
+						ValidationText="{Binding LastNameValidationText}" />
+				</Grid>
+				<controls:WibciEntry
+					EntryText="{Binding Email}"
+					Keyboard="Email"
+					LabelText="email"
+					ValidationText="{Binding EmailValidationText}" />
+				<controls:WibciEntry
+					EntryText="{Binding Notes}"
+					IsMultiLine="True"
+					LabelText="notes (autosize with text)"
+					ValidationText="{Binding NotesValidationText}" />
+				<Label FontSize="Micro" Text="notes (editor)" />
+				<controls:EditorEx
+					AutoSize="Disabled"
+					HeightRequest="150"
+					Text="{Binding Notes}" />
 
-			<Button Command="{Binding ValidateCommand}" Text="Validate" />
-		</StackLayout>
+				<Button Command="{Binding ValidateCommand}" Text="Validate" />
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>

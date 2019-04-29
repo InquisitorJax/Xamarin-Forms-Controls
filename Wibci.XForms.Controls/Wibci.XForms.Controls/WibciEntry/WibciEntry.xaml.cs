@@ -28,6 +28,19 @@ namespace Wibci.XForms.Controls
 				ctrl.IsPassword = (bool)newValue;
 			});
 
+
+		public static readonly BindableProperty IsMultiLineProperty = BindableProperty.Create(nameof(IsMultiLine),
+			typeof(bool),
+			typeof(WibciEntry),
+			false,
+			BindingMode.Default,
+			null,
+			(bindable, oldValue, newValue) =>
+			{
+				var ctrl = (WibciEntry)bindable;
+				ctrl.IsPassword = (bool)newValue;
+			});
+
 		public static readonly BindableProperty LabelTextProperty = BindableProperty.Create(nameof(LabelText), 
 			typeof(string), 
 			typeof(WibciEntry), 
@@ -50,6 +63,7 @@ namespace Wibci.XForms.Controls
 			{
 				var ctrl = (WibciEntry)bindable;
 				ctrl._entry.Keyboard = (Keyboard)newValue;
+				ctrl._editor.Keyboard = (Keyboard)newValue;
 			});
 
 
@@ -69,12 +83,18 @@ namespace Wibci.XForms.Controls
 
 		public bool IsPassword
 		{
-			get { return (bool)base.GetValue(Entry.IsPasswordProperty); }
+			get { return (bool)GetValue(Entry.IsPasswordProperty); }
 			set
 			{
-				base.SetValue(Entry.IsPasswordProperty, value);
+				SetValue(Entry.IsPasswordProperty, value);
 				_entry.IsPassword = value;
 			}
+		}
+
+		public bool IsMultiLine
+		{
+			get => (bool)GetValue(IsMultiLineProperty);
+			set => SetValue(IsMultiLineProperty, value);
 		}
 
 		public Keyboard Keyboard
