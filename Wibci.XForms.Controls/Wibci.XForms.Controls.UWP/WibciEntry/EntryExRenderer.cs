@@ -18,7 +18,7 @@ namespace Wibci.XForms.Controls.UWP.WibciEntry
 			{
 				//TODO: ValidationColor property with default of red
 				var isValid = entry.IsValid;
-				var validationColor = new SolidColorBrush(Color.Red.ToWindowsColor()); ;
+				var validationColor = new SolidColorBrush(entry.ValidationColor.ToWindowsColor()); ;
 				var normalColor = new SolidColorBrush(Color.LightGray.ToWindowsColor());
 				Control.BorderBrush = isValid ? normalColor : validationColor;
 			}

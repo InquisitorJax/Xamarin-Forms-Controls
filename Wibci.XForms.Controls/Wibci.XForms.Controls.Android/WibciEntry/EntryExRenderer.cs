@@ -45,9 +45,11 @@ namespace Wibci.XForms.Controls.Droid.WibciEntry
 			shape.SetCornerRadius(10);
 			shape.SetColor(Color.White.ToAndroid());
 
-			if (!((EntryEx)Element).IsValid)
+			var entry = (EntryEx)Element;
+
+			if (!entry.IsValid)
 			{
-				shape.SetStroke(3, Color.Red.ToAndroid());
+				shape.SetStroke(3, entry.ValidationColor.ToAndroid());
 			}
 			else
 			{

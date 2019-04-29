@@ -65,13 +65,14 @@ namespace Wibci.XForms.Controls
 			typeof(WibciEntry),
 			Color.Default,
 			BindingMode.Default,
-			null,
-			(bindable, oldValue, newValue) =>
-			{
-				var ctrl = (WibciEntry)bindable;
-				ctrl._label.TextColor= (Color)newValue;				
-			});
+			null);
 
+		public static BindableProperty ValidationColorProperty = BindableProperty.Create(nameof(ValidationColor),
+			typeof(Color),
+			typeof(WibciEntry),
+			Color.Red,
+			BindingMode.Default,
+			null);
 
 		public WibciEntry ()
 		{
@@ -100,11 +101,13 @@ namespace Wibci.XForms.Controls
 		public Color LabelTextColor
 		{
 			get => (Color)GetValue(LabelTextColorProperty);
-			set
-			{
-				SetValue(LabelTextColorProperty, value);
-				_label.TextColor = value;
-			}
+			set => SetValue(LabelTextColorProperty, value);
+		}
+
+		public Color ValidationColor
+		{
+			get => (Color)GetValue(ValidationColorProperty);
+			set => SetValue(ValidationColorProperty, value);
 		}
 
 		public bool IsMultiLine

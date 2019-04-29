@@ -37,7 +37,8 @@
 					x:Name="_entry"
 					IsVisible="{Binding IsMultiLine, Converter={StaticResource bob}}"
 					Placeholder="{Binding LabelText}"
-					Text="{Binding EntryText}">
+					Text="{Binding EntryText}"
+					ValidationColor="{Binding ValidationColor}">
 					<Entry.Effects>
 						<controls:ClearEntryEffect />
 					</Entry.Effects>
@@ -48,7 +49,8 @@
 					AutoSize="TextChanges"
 					IsVisible="{Binding IsMultiLine}"
 					Placeholder="{Binding LabelText}"
-					Text="{Binding EntryText}" />
+					Text="{Binding EntryText}"
+					ValidationColor="{Binding ValidationColor}" />
 
 			</Grid>
 
@@ -59,7 +61,7 @@
 				Opacity="0">
 				<BoxView
 					x:Name="_boxView"
-					BackgroundColor="Red"
+					BackgroundColor="{Binding ValidationColor}"
 					CornerRadius="5"
 					HorizontalOptions="FillAndExpand"
 					VerticalOptions="FillAndExpand" />

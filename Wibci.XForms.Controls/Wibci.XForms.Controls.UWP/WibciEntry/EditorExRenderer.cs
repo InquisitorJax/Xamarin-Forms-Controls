@@ -14,11 +14,10 @@ namespace Wibci.XForms.Controls.UWP.WibciEntry
 		{
 			base.OnElementPropertyChanged(sender, e);
 
-			if (Control != null && e.PropertyName == EntryEx.IsValidProperty.PropertyName && Element is EditorEx entry)
+			if (Control != null && e.PropertyName == EditorEx.IsValidProperty.PropertyName && Element is EditorEx editor)
 			{
-				//TODO: ValidationColor property with default of red
-				var isValid = entry.IsValid;
-				var validationColor = new SolidColorBrush(Color.Red.ToWindowsColor()); ;
+				var isValid = editor.IsValid;
+				var validationColor = new SolidColorBrush(editor.ValidationColor.ToWindowsColor()); ;
 				var normalColor = new SolidColorBrush(Color.LightGray.ToWindowsColor());
 				Control.BorderBrush = isValid ? normalColor : validationColor;
 			}
@@ -33,7 +32,6 @@ namespace Wibci.XForms.Controls.UWP.WibciEntry
 			//TODO: TextColor property with default of black
 			Control.BorderBrush = new SolidColorBrush(Color.LightGray.ToWindowsColor());
 			Control.BorderThickness = new Windows.UI.Xaml.Thickness(1);
-			//Control.CornerRadius = 5;
 			Control.Background = new SolidColorBrush(Color.White.ToWindowsColor());
 			Control.Foreground = new SolidColorBrush(Color.Black.ToWindowsColor());
 		}

@@ -4,6 +4,7 @@ using Wibci.XForms.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using System.ComponentModel;
+using Android.Graphics.Drawables;
 
 [assembly: ExportRenderer(typeof(EditorEx), typeof(EditorExRenderer))]
 namespace Wibci.XForms.Controls.Droid.WibciEntry
@@ -12,7 +13,6 @@ namespace Wibci.XForms.Controls.Droid.WibciEntry
 	{
 		public EditorExRenderer(Context context) : base(context)
 		{
-			
 		}
 
 		protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
@@ -37,14 +37,22 @@ namespace Wibci.XForms.Controls.Droid.WibciEntry
 
 		private void SetBackgroundAttributes(bool isValid)
 		{
-			if (isValid)
+			GradientDrawable shape = new GradientDrawable();
+			shape.SetShape(ShapeType.Rectangle);
+			shape.SetCornerRadius(10);
+			shape.SetColor(Color.White.ToAndroid());
+
+			var entry = (EditorEx)Element;
+
+			if (!entry.IsValid)
 			{
-				Control.Background = Context.GetDrawable(Resource.Drawable.EditorEx);
+				shape.SetStroke(3, entry.ValidationColor.ToAndroid());
 			}
 			else
 			{
-				Control.Background = Context.GetDrawable(Resource.Drawable.EditorExError);
+				shape.SetStroke(3, Android.Graphics.Color.LightGray);
 			}
+			Control.SetBackground(shape);
 		}
 	}
 }

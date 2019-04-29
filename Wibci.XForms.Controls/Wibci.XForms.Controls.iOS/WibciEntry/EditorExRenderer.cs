@@ -19,7 +19,7 @@ namespace Wibci.XForms.Controls.iOS.WibciEntry
 			{
 				//TODO: ValidationColor property with default of red
 				var isValid = editor.IsValid;
-				var validationColor = Color.Red;
+				var validationColor = editor.ValidationColor;
 				Control.Layer.BorderColor = isValid ? UIColor.LightGray.CGColor : validationColor.ToCGColor();
 			}
 		}

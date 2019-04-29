@@ -22,11 +22,13 @@
 					EntryText="{Binding Email}"
 					Keyboard="Email"
 					LabelText="email"
+					ValidationColor="HotPink"
 					ValidationText="{Binding EmailValidationText}" />
 				<controls:WibciEntry
 					EntryText="{Binding Notes}"
 					IsMultiLine="True"
 					LabelText="notes (autosize with text)"
+					ValidationColor="{StaticResource ValidationPurple}"
 					ValidationText="{Binding NotesValidationText}" />
 				<Label FontSize="Micro" Text="notes (editor)" />
 				<controls:EditorEx

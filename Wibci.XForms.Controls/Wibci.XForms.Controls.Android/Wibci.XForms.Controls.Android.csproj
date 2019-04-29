@@ -94,9 +94,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\EditorEx.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Wibci.XForms.Controls\Wibci.XForms.Controls.csproj">
       <Project>{52DE2690-EA1A-4DCF-985A-3EEF07B3E1BE}</Project>
       <Name>Wibci.XForms.Controls</Name>
@@ -118,7 +115,7 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_clear_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\EditorExError.xml" />
+    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
