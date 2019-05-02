@@ -16,7 +16,6 @@ namespace Wibci.XForms.Controls.UWP.WibciEntry
 
 			if (Control != null && e.PropertyName == EntryEx.IsValidProperty.PropertyName && Element is EntryEx entry)
 			{
-				//TODO: ValidationColor property with default of red
 				var isValid = entry.IsValid;
 				var validationColor = new SolidColorBrush(entry.ValidationColor.ToWindowsColor()); ;
 				var normalColor = new SolidColorBrush(Color.LightGray.ToWindowsColor());
