@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Wibci.XForms.Controls.WibciEntry
+namespace Wibci.XForms.Controls
 {
 	/*
 		*	<Entry.Behaviors>
@@ -12,10 +12,10 @@ namespace Wibci.XForms.Controls.WibciEntry
 
 	public class EntryCompletedCommandBehavior : Behavior<Entry>
 	{
-		public static readonly BindableProperty CompletedCommandProperty = BindableProperty.Create(nameof(CompletedCommand), 
-			typeof(ICommand), 
-			typeof(EntryCompletedCommandBehavior), 
-			null, 
+		public static readonly BindableProperty CompletedCommandProperty = BindableProperty.Create(nameof(CompletedCommand),
+			typeof(ICommand),
+			typeof(EntryCompletedCommandBehavior),
+			null,
 			BindingMode.OneWay);
 
 		private Entry _entry;

@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-	x:Class="Wibci.XForms.Controls.MainPage"
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:local="clr-namespace:Wibci.XForms.Controls">
+<ContentPage x:Class="Wibci.XForms.Controls.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Wibci.XForms.Controls">
 
-	<StackLayout>
-		<Button Command="{Binding OpenEntryPageCommand}" Text="Entry" />
-	</StackLayout>
+	<local:SwipeContentView>
+		<StackLayout>
+			<Button Command="{Binding OpenEntryPageCommand}" Text="Entry" />
+		</StackLayout>
+	</local:SwipeContentView>
 
 </ContentPage>
