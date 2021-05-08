@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentView
-	x:Class="Wibci.XForms.Controls.WibciEntry"
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:controls="clr-namespace:Wibci.XForms.Controls"
-	xmlns:converters="clr-namespace:Wibci.Xamarin.Forms.Converters;assembly=Wibci.Xamarin.Forms.Converters"
-	x:Name="_wibciEntry">
+<ContentView x:Class="Wibci.XForms.Controls.WibciEntry"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Wibci.XForms.Controls"
+             xmlns:converters="clr-namespace:Wibci.Xamarin.Forms.Converters;assembly=Wibci.Xamarin.Forms.Converters"
+             x:Name="_wibciEntry">
 	<ContentView.Margin>
 		<OnPlatform x:TypeArguments="Thickness">
 			<On Platform="iOS" Value="0,25,0,0" />
@@ -24,53 +23,47 @@
 			</StackLayout.Resources>
 			<Grid>
 
-				<Label
-					x:Name="_label"
-					Margin="5,5,0,0"
-					FontSize="Micro"
-					IsVisible="{Binding Text, Source={x:Reference _entry}, Converter={StaticResource nvb}, ConverterParameter=switch}"
-					Opacity="0"
-					Text="{Binding LabelText}"
-					TextColor="{Binding LabelTextColor}" />
+				<Label x:Name="_label"
+				       Margin="5,5,0,0"
+				       FontSize="Micro"
+				       IsVisible="{Binding Text, Source={x:Reference _entry}, Converter={StaticResource nvb}, ConverterParameter='switch'}"
+				       Opacity="0"
+				       Text="{Binding LabelText}"
+				       TextColor="{Binding LabelTextColor}" />
 
-				<controls:EntryEx
-					x:Name="_entry"
-					IsVisible="{Binding IsMultiLine, Converter={StaticResource bob}}"
-					Placeholder="{Binding LabelText}"
-					Text="{Binding EntryText}"
-					ValidationColor="{Binding ValidationColor}">
+				<controls:EntryEx x:Name="_entry"
+				                  IsVisible="{Binding IsMultiLine, Converter={StaticResource bob}}"
+				                  Placeholder="{Binding LabelText}"
+				                  Text="{Binding EntryText}"
+				                  ValidationColor="{Binding ValidationColor}">
 					<Entry.Effects>
 						<controls:ClearEntryEffect />
 					</Entry.Effects>
 				</controls:EntryEx>
 
-				<controls:EditorEx
-					x:Name="_editor"
-					AutoSize="TextChanges"
-					IsVisible="{Binding IsMultiLine}"
-					Placeholder="{Binding LabelText}"
-					Text="{Binding EntryText}"
-					ValidationColor="{Binding ValidationColor}" />
+				<controls:EditorEx x:Name="_editor"
+				                   AutoSize="TextChanges"
+				                   IsVisible="{Binding IsMultiLine}"
+				                   Placeholder="{Binding LabelText}"
+				                   Text="{Binding EntryText}"
+				                   ValidationColor="{Binding ValidationColor}" />
 
 			</Grid>
 
-			<Grid
-				x:Name="_validationGrid"
-				Padding="10,0,0,0"
-				HeightRequest="0"
-				Opacity="0">
-				<BoxView
-					x:Name="_boxView"
-					BackgroundColor="{Binding ValidationColor}"
-					CornerRadius="5"
-					HorizontalOptions="FillAndExpand"
-					VerticalOptions="FillAndExpand" />
-				<Label
-					Margin="5,0,0,0"
-					FontSize="Small"
-					Text="{Binding ValidationText, Source={x:Reference _wibciEntry}}"
-					TextColor="White"
-					VerticalTextAlignment="Center" />
+			<Grid x:Name="_validationGrid"
+			      Padding="10,0,0,0"
+			      HeightRequest="0"
+			      Opacity="0">
+				<BoxView x:Name="_boxView"
+				         BackgroundColor="{Binding ValidationColor}"
+				         CornerRadius="5"
+				         HorizontalOptions="FillAndExpand"
+				         VerticalOptions="FillAndExpand" />
+				<Label Margin="5,0,0,0"
+				       FontSize="Small"
+				       Text="{Binding ValidationText, Source={x:Reference _wibciEntry}}"
+				       TextColor="White"
+				       VerticalTextAlignment="Center" />
 			</Grid>
 		</StackLayout>
 	</ContentView.Content>
