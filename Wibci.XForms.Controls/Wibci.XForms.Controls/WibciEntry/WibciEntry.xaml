@@ -34,6 +34,7 @@
 				<controls:EntryEx x:Name="_entry"
 				                  IsVisible="{Binding IsMultiLine, Converter={StaticResource bob}}"
 				                  Placeholder="{Binding LabelText}"
+				                  PlaceholderColor="{Binding LabelTextColor}"
 				                  Text="{Binding EntryText}"
 				                  ValidationColor="{Binding ValidationColor}">
 					<Entry.Effects>
@@ -45,6 +46,7 @@
 				                   AutoSize="TextChanges"
 				                   IsVisible="{Binding IsMultiLine}"
 				                   Placeholder="{Binding LabelText}"
+				                   PlaceholderColor="{Binding LabelTextColor}"
 				                   Text="{Binding EntryText}"
 				                   ValidationColor="{Binding ValidationColor}" />
 
