@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Wibci.XForms.Controls.EntrySuggestions.EntrySuggestionPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:entrysuggestions="clr-namespace:Wibci.XForms.Controls.EntrySuggestions"
+             x:DataType="entrysuggestions:EntrySuggestionViewModel">
+	<ContentPage.Content>
+		<Grid RowDefinitions="Auto, *">
+			<StackLayout>
+				<Label FontSize="24"
+				       HorizontalOptions="Center"
+				       Text="start typing 'Task' in the entry" />
+				<Label FontSize="16"
+				       HorizontalOptions="Center"
+				       Text="select an option with the up and down arrow keys" />
+				<Label FontSize="16"
+				       HorizontalOptions="Center"
+				       Text="press enter to select an item" />
+
+				<Label FontSize="28"
+				       HorizontalOptions="Center"
+				       Text="{Binding FinalSelectionText}"
+				       TextColor="Green" />
+			</StackLayout>
+			<StackLayout Grid.Row="1"
+			             Margin="16,0,16,16"
+			             VerticalOptions="End">
+				<StackLayout BindableLayout.ItemsSource="{Binding Suggestions}" VerticalOptions="End">
+					<BindableLayout.ItemTemplate>
+						<DataTemplate x:DataType="entrysuggestions:Suggestion">
+							<Label Text="{Binding Text}">
+								<Label.Triggers>
+									<DataTrigger Binding="{Binding IsSelected}"
+									             TargetType="Label"
+									             Value="True">
+										<Setter Property="TextColor" Value="Green" />
+										<Setter Property="FontSize" Value="18" />
+									</DataTrigger>
+								</Label.Triggers>
+							</Label>
+						</DataTemplate>
+					</BindableLayout.ItemTemplate>
+				</StackLayout>
+				<entrysuggestions:KeyboardEntry x:Name="_entry"
+				                                ReturnCommand="{Binding DoSomethingCommand}"
+				                                Text="{Binding SelectedText}" />
+			</StackLayout>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

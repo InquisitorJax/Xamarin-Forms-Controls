@@ -90,6 +90,8 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EntrySuggestions\KeyboardEntryRenderer.cs" />
+    <Compile Include="EntrySuggestions\KeyPressUITextField.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="WibciEntry\ClearEntryEffect.cs" />
@@ -152,7 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Prism.Core">
-      <Version>8.0.0.1909</Version>
+      <Version>8.1.97</Version>
     </PackageReference>
     <PackageReference Include="Wibci.Xamarin.Forms.Converters">
       <Version>2.0.0</Version>

@@ -6,7 +6,8 @@
 
 	<local:SwipeContentView>
 		<StackLayout>
-			<Button Command="{Binding OpenEntryPageCommand}" Text="Entry" />
+			<Button Command="{Binding OpenEntryPageCommand}" Text="Validation Entry" />
+			<Button Command="{Binding OpenKeyboardEntryPageCommand}" Text="Keyboard Events Entry with Suggestions" />
 		</StackLayout>
 	</local:SwipeContentView>
 
